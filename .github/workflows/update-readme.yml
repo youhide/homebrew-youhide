@@ -1,0 +1,38 @@
+name: Update README
+
+permissions:
+  contents: write
+
+on:
+  push:
+    paths:
+      - 'Formula/*.rb'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate README
+        run: |
+          echo "# homebrew-youhide" > README.md
+          echo "" >> README.md
+          echo "🍺 homebrew tap for my dark tools. May the brew be with you, hmmmm." >> README.md
+          echo "" >> README.md
+          echo "## Available Formulas" >> README.md
+          echo "" >> README.md
+          for formula in Formula/*.rb; do
+            name=$(basename "$formula" .rb)
+            desc=$(grep "desc " "$formula" | cut -d'"' -f2)
+            echo "- **$name**: $desc" >> README.md
+          done
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add README.md
+          git commit -m "Update README with latest formulas" || true
+          git push
