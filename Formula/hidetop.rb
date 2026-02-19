@@ -11,7 +11,7 @@ class Hidetop < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/youhide/hideTop/releases/download/v0.0.1/hideTop_Darwin_x86_64.tar.gz"
-      sha256 "b0a0e93141b22ad5ff93fadbdb6871faec8f49e48d96401edb116c378db51689"
+      sha256 "fce85e0d4f4ba0bbf74020778d6a96c2dc5f4bfe6d5003444ac80a1706e1881d"
 
       def install
         bin.install "hideTop" => "hidetop"
@@ -19,7 +19,7 @@ class Hidetop < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/youhide/hideTop/releases/download/v0.0.1/hideTop_Darwin_arm64.tar.gz"
-      sha256 "7a1df690e699ed6faba34cbf49adcf74ffc2c8ce045dd5e1279d95ca733de5ad"
+      sha256 "888e9b1d0550421cae3db57cbf6001480321b630dc56a770973d2a5a12e1840e"
 
       def install
         bin.install "hideTop" => "hidetop"
@@ -30,14 +30,14 @@ class Hidetop < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/youhide/hideTop/releases/download/v0.0.1/hideTop_Linux_x86_64.tar.gz"
-      sha256 "6e2292149d873f5ce1152af69f3d8d6ffe1c7f51619ceec9b7697c93d9ea5903"
+      sha256 "10531f9d0630a6791a364a0ec5dee616581bd88556bbd253e60848966cbf9d01"
       def install
         bin.install "hideTop" => "hidetop"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/youhide/hideTop/releases/download/v0.0.1/hideTop_Linux_arm64.tar.gz"
-      sha256 "9326b8e78b6100489c398be0d5c33afcc0a8956299ce7473b1784e3913f7b09e"
+      sha256 "f0cc4f33cf4eacadafc28213c133d18436d00a3780659dc439a5dd9f8736dcbb"
       def install
         bin.install "hideTop" => "hidetop"
       end
