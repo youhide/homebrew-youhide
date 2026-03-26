@@ -5,21 +5,21 @@
 class Hidetop < Formula
   desc "A modern terminal-based system monitor written in Go, offering real-time CPU, memory, Apple Silicon GPU metrics, energy impact, and an interactive process list."
   homepage "https://github.com/youhide/hideTop"
-  version "0.0.4"
+  version "0.0.5"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.4/hideTop_Darwin_x86_64.tar.gz"
-      sha256 "4b8cc62e8273ab7690968058401b2c1677cfe79d9843b1527b3123f663b4edfc"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.5/hideTop_Darwin_x86_64.tar.gz"
+      sha256 "cbf3ae113347e3e1b34e8b2c739a3f0fcdb983eaff1d669fdcd17cee18e69223"
 
       define_method(:install) do
         bin.install "hideTop" => "hidetop"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.4/hideTop_Darwin_arm64.tar.gz"
-      sha256 "413a32852e9729f889ef3236844f4ebb7e7d5fba986e802673b46eba690198c4"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.5/hideTop_Darwin_arm64.tar.gz"
+      sha256 "400e80808698ee930ccb80b5ab7b99aee7b5f22ebdece484a8bb4660c1e686fa"
 
       define_method(:install) do
         bin.install "hideTop" => "hidetop"
@@ -29,15 +29,15 @@ class Hidetop < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.4/hideTop_Linux_x86_64.tar.gz"
-      sha256 "54dd10ea90f4f01c903df43ac2a1c4f4b8ff19e6508c038d5666f13c95da807e"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.5/hideTop_Linux_x86_64.tar.gz"
+      sha256 "ea232aeaf15722e34624e7e7694d617fb4f9be89adc016d8eff2221467f1bb20"
       define_method(:install) do
         bin.install "hideTop" => "hidetop"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.4/hideTop_Linux_arm64.tar.gz"
-      sha256 "13dd21ce1cfb3ccfa61d97969fb389a1f5a3f83da1488fba6cbe705e7368ca2c"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.5/hideTop_Linux_arm64.tar.gz"
+      sha256 "dcc86dc8244e05b32b12ffc5587bcb049661bdca65f9a1232f78996c861f3368"
       define_method(:install) do
         bin.install "hideTop" => "hidetop"
       end
