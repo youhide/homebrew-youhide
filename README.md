@@ -4,4 +4,4 @@
 
 ## Available Formulas
 
-- **hidedot**: A dotfiles manager written in Go
+- *****: 
