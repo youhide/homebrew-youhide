@@ -1,28 +1,28 @@
 class Hidedot < Formula
   desc "A dotfiles manager written in Go"
   homepage "https://github.com/youhide/hideDot"
-  version "0.0.7"
+  version "0.0.8"
   license "GPL-3.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/youhide/hideDot/releases/download/v0.0.7/hideDot_Darwin_arm64.tar.gz"
-      sha256 "c224f8426868ce226798032060df4decd4e491e5a3f805c46da63fc9c5e05019"
+      url "https://github.com/youhide/hideDot/releases/download/v0.0.8/hideDot_Darwin_arm64.tar.gz"
+      sha256 "26b6d65b5fc6dd0e305c652bf95b2bc468a245a5ff7dd5399bfe5297c4f91b45"
     end
     on_intel do
-      url "https://github.com/youhide/hideDot/releases/download/v0.0.7/hideDot_Darwin_x86_64.tar.gz"
-      sha256 "6c391eb9377dc5c002065922a0df32222adc1e6a20abefc7725d9ed9e0b3b52d"
+      url "https://github.com/youhide/hideDot/releases/download/v0.0.8/hideDot_Darwin_x86_64.tar.gz"
+      sha256 "6c1dfede97139704f1206b29453b9bd5dd5f5a0ed4705fbab6760d2972d0cbd2"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/youhide/hideDot/releases/download/v0.0.7/hideDot_Linux_arm64.tar.gz"
-      sha256 "d592d53eaa3faac1daad6a940aa72b148dbea9285c63ab54f7e1542ca254225c"
+      url "https://github.com/youhide/hideDot/releases/download/v0.0.8/hideDot_Linux_arm64.tar.gz"
+      sha256 "a6cede0673a9779694f269bbff58238804a66827091ab8906647e15f145aabd3"
     end
     on_intel do
-      url "https://github.com/youhide/hideDot/releases/download/v0.0.7/hideDot_Linux_x86_64.tar.gz"
-      sha256 "2147d90e368c39aa781524e5a71a406e9b338845b51960914cc9d6befb3c87fc"
+      url "https://github.com/youhide/hideDot/releases/download/v0.0.8/hideDot_Linux_x86_64.tar.gz"
+      sha256 "2a805bf1d13e470c4531c74f0c85f89a497b5fbc9343cb71aebb6a0af6ad138c"
     end
   end
 
