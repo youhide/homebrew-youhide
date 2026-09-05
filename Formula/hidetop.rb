@@ -1,28 +1,28 @@
 class Hidetop < Formula
   desc "A modern terminal-based system monitor written in Go, offering real-time CPU, memory, Apple Silicon GPU metrics, energy impact, and an interactive process list."
   homepage "https://github.com/youhide/hideTop"
-  version "0.0.9"
+  version "0.0.10"
   license "GPL-3.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.9/hideTop_Darwin_arm64.tar.gz"
-      sha256 "8edc6bea060109c3baa873202017408b8d3dd357faaecdedc9a6a8a88130efb2"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.10/hideTop_Darwin_arm64.tar.gz"
+      sha256 "52cfd6f2687de1769d58224218fa9b73a965c2e79db472628fdc269c7531655c"
     end
     on_intel do
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.9/hideTop_Darwin_x86_64.tar.gz"
-      sha256 "31cc109898f3195d8be1a9b1d89d62a6a2cd7f926b52b4dd5ffa432d6d97c7c5"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.10/hideTop_Darwin_x86_64.tar.gz"
+      sha256 "9e703e5cd358b3d73b3cd907a379e0fb50a4901820bb53e5ba44e148c32454e2"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.9/hideTop_Linux_arm64.tar.gz"
-      sha256 "bfeeeeaab34cb19a9fbe7bb60a05590d43d54439f9501409875b4cdd77cee3b2"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.10/hideTop_Linux_arm64.tar.gz"
+      sha256 "99169b702da7506fa5dfbbe0c973bb2446f40537509b01833a5b86c7cca7248b"
     end
     on_intel do
-      url "https://github.com/youhide/hideTop/releases/download/v0.0.9/hideTop_Linux_x86_64.tar.gz"
-      sha256 "00f3df46c509e4a38d5397200eff7c52b503989bfd56c6e982f7f791d75183af"
+      url "https://github.com/youhide/hideTop/releases/download/v0.0.10/hideTop_Linux_x86_64.tar.gz"
+      sha256 "35cca44fb7006534f3dae15b0ba47e489083ae047ea1c0cf4eac6c252db60693"
     end
   end
 
