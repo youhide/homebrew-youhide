@@ -1,33 +1,34 @@
 class Hidepass < Formula
   desc "Pass-compatible password manager: same store, same gpg keys, more features"
   homepage "https://github.com/youhide/hidePass"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/youhide/hidePass/releases/download/v0.1.0/hidepass_Darwin_arm64.tar.gz"
-      sha256 "e741ce762b416ee3b58c616630783a20a450dc281366cbfd030a1fc90595757a"
+      url "https://github.com/youhide/hidePass/releases/download/v0.2.0/hidepass_Darwin_arm64.tar.gz"
+      sha256 "b7afa4405e8e17e3295fafef22006a4f610f9be0363374d60eb485563cff2698"
     end
     on_intel do
-      url "https://github.com/youhide/hidePass/releases/download/v0.1.0/hidepass_Darwin_x86_64.tar.gz"
-      sha256 "fe8b9030e39589858f169aeb0fdc6ab7519f1275f5ee70a06473a35e8b7c8c55"
+      url "https://github.com/youhide/hidePass/releases/download/v0.2.0/hidepass_Darwin_x86_64.tar.gz"
+      sha256 "75bf0d96bad09721fdb982c5e4209fce48013106ecd863575e5accb064cc2da8"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/youhide/hidePass/releases/download/v0.1.0/hidepass_Linux_arm64.tar.gz"
-      sha256 "80d4e5cddef4a3e935f70c23c1021b160b6021ba966ca825567aaa919b7648a1"
+      url "https://github.com/youhide/hidePass/releases/download/v0.2.0/hidepass_Linux_arm64.tar.gz"
+      sha256 "2129dce4fea4dc6f867d07f808a8160b30fd1c148c7d2d9770cb89ca1ee4f83f"
     end
     on_intel do
-      url "https://github.com/youhide/hidePass/releases/download/v0.1.0/hidepass_Linux_x86_64.tar.gz"
-      sha256 "5d9108039eb21148505dc4f38dec986399bf9c61c880070c60aef542941e6fc2"
+      url "https://github.com/youhide/hidePass/releases/download/v0.2.0/hidepass_Linux_x86_64.tar.gz"
+      sha256 "f6e362c6b6f09a8bf197866e1aca31ab0dcef475e8e713826e668f9e102e5238"
     end
   end
 
   def install
     bin.install "hidepass"
+    generate_completions_from_executable(bin/"hidepass", "completions")
   end
 
   test do
