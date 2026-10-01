@@ -1,0 +1,48 @@
+name: Update formulas
+
+# Pulls instead of being pushed to: the projects publish releases and know
+# nothing about this tap, so none of them needs a token with write access here.
+# A release shows up within the hour; run this by hand to skip the wait.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - projects.toml
+      - scripts/update.py
+      - .github/workflows/update.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-formulas
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/update.py --message-file "$RUNNER_TEMP/message"
+
+      # Runs after a failed regenerate too, so one project with a broken
+      # release does not hold back the others.
+      - name: Commit
+        if: ${{ !cancelled() }}
+        run: |
+          git add Formula README.md
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "youhide-bot"
+          git config user.email "youri@youhide.com.br"
+          git commit -m "$(cat "$RUNNER_TEMP/message")"
+          git push

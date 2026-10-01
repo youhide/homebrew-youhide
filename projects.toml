@@ -1,0 +1,61 @@
+# Every formula in this tap, and where its releases come from.
+#
+# scripts/update.py reads this, finds the latest release of each project, and
+# regenerates Formula/<name>.rb and README.md. Nothing in the projects
+# themselves knows this tap exists: adding one is a table here.
+#
+# Keys:
+#   repo         owner/name on GitHub
+#   desc         formula desc
+#   license      SPDX id, or a list for "any of"
+#   binaries     installed into bin; the first is the one `brew test` runs
+#   goreleaser   archive prefix for GoReleaser's default names,
+#                <prefix>_{Darwin,Linux}_{arm64,x86_64}.tar.gz
+#   assets       instead of goreleaser: a table of darwin_arm, darwin_intel,
+#                linux_arm, linux_intel, each an asset name with {tag} and
+#                {version} filled in. Platforms left out are not offered; no
+#                darwin key makes the formula Linux-only
+#   docs         files from the archive installed into share/doc/<name>
+#   completions  subcommand that prints a completion script for a shell name
+#   prereleases  take the newest release even when it is a prerelease
+
+[chainchaos]
+repo = "youhide/ChainChaos"
+desc = "Blockchain-aware JSON-RPC chaos testing proxy for EVM applications"
+license = "MIT"
+binaries = ["chainchaos"]
+goreleaser = "chainchaos"
+
+[hidedot]
+repo = "youhide/hideDot"
+desc = "A dotfiles manager written in Go"
+license = "GPL-3.0"
+binaries = ["hidedot"]
+goreleaser = "hideDot"
+
+[hidepass]
+repo = "youhide/hidePass"
+desc = "Pass-compatible password manager: same store, same gpg keys, more features"
+license = "MIT"
+binaries = ["hidepass"]
+goreleaser = "hidepass"
+completions = "completions"
+
+[hidetop]
+repo = "youhide/hideTop"
+desc = "A modern terminal-based system monitor written in Go, offering real-time CPU, memory, Apple Silicon GPU metrics, energy impact, and an interactive process list."
+license = "GPL-3.0"
+binaries = ["hidetop"]
+goreleaser = "hideTop"
+
+[oxinit]
+repo = "youhide/oxinit"
+desc = "Service manager and PID 1 for Linux"
+license = ["MIT", "Apache-2.0"]
+binaries = ["oxinit", "oxctl", "oxlogd"]
+docs = ["UNIT_FORMAT.md"]
+prereleases = true
+
+[oxinit.assets]
+linux_arm = "oxinit-{tag}-aarch64-linux-musl.tar.gz"
+linux_intel = "oxinit-{tag}-x86_64-linux-musl.tar.gz"
